@@ -1,0 +1,96 @@
+# 1.자바스크립트 공부 1일차
+## 1.1. 개요
+
+* JavaScript는 유형 및 연산자, 표준 내장 객체 및 메소드가 있는 다중 패러다임, 동적언어이다.
+* 클래스 대신 객체 프로토 타입을 사용하여 객체 지향 프로그래밍을 지원.
+* 함수형 프로그래밍도 지원.
+* 구문은 Java 및 C언어를 기반.
+
+## 1.2. 타입
+* 수(Number)
+* 문자열(String)
+* 부울(Boolean)
+* 기호(Symbol)
+* 객체(Object)
+   * 함수(Function)
+   * 배열(Array)
+   * 날짜(Date)
+   * 정규식(RegExp)
+ * 널(Null)
+ * 정의되지 않음(Undefined)
+
+### 1.2.1. 수 (Numbers)
+* 이중정밀도 64비트 형식 IEEE 754 값으로 정의 됨.
+* 정수가 존재하지 않음 (BigInt 제외)
+
+##### 1.2.1.1 조심해야 할 몇 가지 예제
+<pre>
+<code>
+console.log(3/2) // 1이 아닌, 1.5
+console.log(Math.floor(3/2)); // 1
+</code>
+</pre>
+정수가 아닌 실수로 계산된다.
+
+```
+0.1 + 0.2 = 0.30000000000000004
+```
+위와 같은 오류는 64비트 IEEE 754 형식이 정확한 실수값이 아닌 근사값으로 저장되기 때문에 발생 함.
+
+##### 1.2.1.2 여러 내장 함수 사용법
+
+다음과 같이 덧셈, 뺄셈, 계수(또는 나머지) 연산을 포함하는 표준 산술 연산자가 지원됨.
+고급 수학 함수와 상수를 다루기 위한 내장 객체 Math가 있음.
+```
+Math.sin(3.5);
+var circumference = 2 * Math.PI * r;
+```
+
+내장 parseInt()함수를 사용하여 문자열을 정수로 변환할 수 있음.
+두번째 매개변수는 문자열을 몇진수로 바꿀건지 정함.
+```
+parseInt('333', 10); // 333
+parseInt('022', 10); // 22
+parseInt('010') // 8
+parseInt('0x10') // 16
+
+```
+두번째 매개변수를 넣지 않았을때 문자열의 시작이 0, 0x라면 각각 8진수, 16진수 표기법이 적용 됨.
+
+```
+parseInt('11',2); //3
+```
+이진수 표기 방법.
+
+단항 연산자 + 를 사용하여 값을 숫자로 변환 할 수 있음
+```
++ '22'; //22
++ '010'; //10
++ '0x10'; //16 
+```
+
+문자열이 수가 아닌 경우 NaN(Not a Number)를 리턴.
+```
+parseInt('hello', 10); //NaN
+```
+NaN이 연산의 입력값으로 주어지면 결과는 NaN.
+```
+NaN + 10; //NaN
+```
+내장 isNaN()함수로 NaN 여부 확인
+```
+isNaN(NaN) // true
+```
+Infinity와 -Infinity
+```
+1 / 0; // Infinity
+-1 / 0; // -Infinity
+```
+내장 IsFinite()함수로 Infinity, -Infinity, NaN 값 테스트
+```
+isFinite(1 / 0); //false
+isFinite(-Infinity) //false
+isFinite(NaN) //false
+```
+# 출처
+[JAVASCRIPT듀토리얼](https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript)
