@@ -7,23 +7,23 @@
 * 구문은 Java 및 C언어를 기반.
 
 ## 1.2. 타입
-* 수(Number)
-* 문자열(String)
-* 부울(Boolean)
-* 기호(Symbol)
-* 객체(Object)
-   * 함수(Function)
-   * 배열(Array)
-   * 날짜(Date)
-   * 정규식(RegExp)
- * 널(Null)
- * 정의되지 않음(Undefined)
+* [수(Number)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number)
+* [문자열(String)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
+* [부울(Boolean)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+* [기호(Symbol)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+* [객체(Object)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object)
+   * [함수(Function)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)
+   * [배열(Array)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)
+   * [날짜(Date)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+   * [정규식(RegExp)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+ * [널(Null)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/null)
+ * [정의되지 않음(Undefined)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/undefined)
 
 ### 1.2.1. 수 (Numbers)
 * 이중정밀도 64비트 형식 IEEE 754 값으로 정의 됨.
 * 정수가 존재하지 않음 (BigInt 제외)
 
-##### 1.2.1.1 조심해야 할 몇 가지 예제
+##### 1.2.1.1. 조심해야 할 몇 가지 예제
 <pre>
 <code>
 console.log(3/2) // 1이 아닌, 1.5
@@ -37,7 +37,7 @@ console.log(Math.floor(3/2)); // 1
 ```
 위와 같은 오류는 64비트 IEEE 754 형식이 정확한 실수값이 아닌 근사값으로 저장되기 때문에 발생 함.
 
-##### 1.2.1.2 여러 내장 함수 사용법
+##### 1.2.1.2. 여러 내장 함수 사용법
 
 다음과 같이 덧셈, 뺄셈, 계수(또는 나머지) 연산을 포함하는 표준 산술 연산자가 지원됨.
 고급 수학 함수와 상수를 다루기 위한 내장 객체 Math가 있음.
@@ -91,6 +91,30 @@ Infinity와 -Infinity
 isFinite(1 / 0); //false
 isFinite(-Infinity) //false
 isFinite(NaN) //false
+```
+### 1.2.2. 문자열(Strings)
+* 유니코드 문자들이 연결되어 만들어진 것.
+
+문자열의 길이
+```
+'hello'.length; //5
+```
+
+문자열은 객체로 취급 됨.
+```
+'hello'.charAt(0); // "h"
+'hello, world'.replace('hello', 'goodbye'); //"goodbye, world"
+'hello'.toUpperCase(); // "HELLO"
+```
+
+### 1.2.3. 이외의 타입
+* 변수에 값을 주지 않고 선언하는 것이 가능 함. 이 경우 변수의 타입은 undefined.
+* true와 false 값을 가질 수 있는 부울 타입이 존재 함.
+  1. false, 0, 빈 문자열(""), NaN, null, undefined는 모두 false
+  2. 다른 모든 값은 true
+```
+Boolean(''); //false
+Boolean(123); //true
 ```
 # 출처
 [JAVASCRIPT듀토리얼](https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript)
